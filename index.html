@@ -324,6 +324,13 @@ main:focus { outline: none; }
 .hero h1 { color: var(--white); margin-bottom: var(--s4); }
 .hero h1 em { font-style: normal; color: var(--gold); }
 .hero .lead { margin-bottom: var(--s5); }
+.hero-pickup { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 var(--s4); padding: 8px 14px; border-radius: var(--radius-pill); background: var(--gold); color: var(--navy); font-weight: 700; font-size: .9rem; box-shadow: 0 6px 18px rgba(201,162,39,.3); }
+.hero-pickup .icon { width: 20px; height: 20px; }
+.section-navy .steps { grid-template-columns: 1fr; }
+.section-navy .step { background: rgba(255,255,255,.06); border-color: rgba(201,162,39,.35); }
+.section-navy .step::before { background: var(--gold); color: var(--navy); }
+.section-navy .step p { color: rgba(255,255,255,.82); }
+.section-navy .status-detail { color: rgba(255,255,255,.78); }
 .hero-quote { font-family: var(--font-title); font-style: italic; color: var(--gold-light); font-size: 1.08rem; margin: var(--s5) 0 0; padding-left: var(--s4); border-left: 3px solid var(--gold); }
 @media (min-width: 960px) {
   .hero .container { grid-template-columns: 1.25fr 1fr; align-items: center; padding-top: var(--s8); padding-bottom: var(--s8); gap: var(--s7); }
@@ -766,7 +773,7 @@ body.scroll-locked { position: fixed; left: 0; right: 0; overflow: hidden; }
     <h2>Fale com a JM Soluções</h2>
     <p>Para navegar pelo site e montar seu orçamento, ative o JavaScript do navegador. Enquanto isso, fale com a gente:</p>
     <p><strong>WhatsApp:</strong> <a href="https://wa.me/5515991754611" target="_blank" rel="noopener">(15) 99175-4611</a></p>
-    <p><strong>Endereço:</strong> Rua Faria Lima, 279 – Iperó/SP</p>
+    <p><strong>Endereço:</strong> Rua Faria Lima, 279 – Iperó/SP · Ponto de Retirada Mercado Livre</p>
     <p><strong>Horário:</strong> segunda a sexta, das 8h às 18h; sábado, das 8h às 14h; domingo fechado.</p>
     <p><strong>Instagram:</strong> <a href="https://www.instagram.com/jmsolucoesdigitais.oficial/" target="_blank" rel="noopener">@jmsolucoesdigitais.oficial</a></p>
   </div>
@@ -857,9 +864,10 @@ body.scroll-locked { position: fixed; left: 0; right: 0; overflow: hidden; }
       </div>
       <div class="container">
         <div>
+          <p class="hero-pickup"><svg class="icon" aria-hidden="true"><use href="#i-package"/></svg> Somos Ponto de Retirada Mercado Livre</p>
           <p class="eyebrow"><span>Centro de soluções em <span data-bind="cidade">Iperó</span></span></p>
           <h1 class="page-title" id="t-inicio" tabindex="-1">Gráfica, personalizados e documentos <em>em um só lugar.</em></h1>
-          <p class="lead">Impressões, brindes, uniformes, serviços digitais e assessoria jurídica e documental, com atendimento próximo e a agilidade de quem resolve. Tudo aqui em <span data-bind="cidadeUf">Iperó/SP</span>.</p>
+          <p class="lead">Impressões, brindes, uniformes, serviços digitais e assessoria jurídica e documental, com atendimento próximo e a agilidade de quem resolve. E ainda: retire aqui as suas compras do Mercado Livre. Tudo em <span data-bind="cidadeUf">Iperó/SP</span>.</p>
           <div class="btn-row">
             <a class="btn btn-gold" href="#/catalogo">Ver catálogo <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
             <a class="btn btn-outline-light" data-wa="Olá, JM Soluções! Vim pelo site e gostaria de pedir um orçamento.">
@@ -898,8 +906,31 @@ body.scroll-locked { position: fixed; left: 0; right: 0; overflow: hidden; }
           <li class="reveal"><a class="card card-link" href="#/brindes"><span class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-gift"/></svg></span><h3>Brindes empresariais</h3><p>Brindes com a sua marca para clientes, equipes e eventos.</p><span class="more">Conhecer <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a></li>
           <li class="reveal"><a class="card card-link" href="#/uniformes"><span class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-shirt"/></svg></span><h3>Uniformes</h3><p>Camisetas, polos, aventais e bonés em silk, sublimação ou DTF.</p><span class="more">Ver uniformes <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a></li>
           <li class="reveal"><a class="card card-link" href="#/assessoria"><span class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-file"/></svg></span><h3>Assessoria jurídica e documental</h3><p>Contratos, procurações, declarações, INSS e muito mais.</p><span class="more">Saiba mais <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a></li>
+          <li class="reveal"><a class="card card-link" href="#/duvidas"><span class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-package"/></svg></span><h3>Ponto de Retirada Mercado Livre</h3><p>Compre no Mercado Livre e retire aqui, no nosso horário de atendimento.</p><span class="more">Como retirar <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a></li>
           <li class="reveal"><a class="card card-link" href="#/servicos"><span class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-monitor"/></svg></span><h3>Serviços digitais</h3><p>MEI, nota fiscal, currículo, agendamentos e segunda via de documentos.</p><span class="more">Ver serviços <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a></li>
         </ul>
+      </div>
+    </section>
+
+    <section class="section section-navy on-dark" aria-labelledby="t-ml">
+      <div class="container grid-2">
+        <div>
+          <p class="eyebrow">Ponto de Retirada Mercado Livre</p>
+          <h2 id="t-ml">Comprou no Mercado Livre? Retire aqui na JM</h2>
+          <p class="lead">Somos ponto de retirada em <span data-bind="cidadeUf">Iperó/SP</span>. Na hora de comprar, escolha retirar no ponto e venha buscar sem esperar o entregador.</p>
+          <div class="status" data-status style="margin:8px 0 16px"><span class="status-dot"></span><span class="status-text">Verificando horário…</span></div>
+          <div class="btn-row">
+            <a class="btn btn-gold" data-wa="Olá, JM Soluções! Tenho uma dúvida sobre a retirada de uma compra do Mercado Livre.">
+              <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg> Tirar dúvida
+            </a>
+            <a class="btn btn-outline-light" data-href="rota" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg> Como chegar</a>
+          </div>
+        </div>
+        <ol class="steps">
+          <li class="step reveal"><h3>Compre</h3><p>No app do Mercado Livre, escolha retirar no ponto da JM Soluções.</p></li>
+          <li class="step reveal"><h3>Aguarde o aviso</h3><p>O app avisa quando o pacote chegar aqui.</p></li>
+          <li class="step reveal"><h3>Retire</h3><p>Traga documento com foto e o código de retirada do app.</p></li>
+        </ol>
       </div>
     </section>
 
@@ -975,7 +1006,7 @@ body.scroll-locked { position: fixed; left: 0; right: 0; overflow: hidden; }
       <div class="container">
         <p class="eyebrow">Serviços</p>
         <h1 class="page-title" id="t-servicos" tabindex="-1">Nossos serviços</h1>
-        <p class="lead">Do cartão de visita à abertura do seu MEI: escolha o serviço e fale direto com a gente pelo WhatsApp.</p>
+        <p class="lead">Do cartão de visita à abertura do seu MEI, e ainda Ponto de Retirada Mercado Livre: escolha o serviço e fale direto com a gente pelo WhatsApp.</p>
       </div>
     </div>
     <section class="section" aria-label="Lista de serviços">
@@ -1300,6 +1331,7 @@ body.scroll-locked { position: fixed; left: 0; right: 0; overflow: hidden; }
             <li><span class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-pin"/></svg></span><div><strong>Endereço</strong><p data-bind="enderecoCompleto">Rua Faria Lima, 279 – Iperó/SP</p></div></li>
             <li><span class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-whatsapp"/></svg></span><div><strong>WhatsApp</strong><p><a data-wa="Olá, JM Soluções! Vim pelo site." data-bind="whatsappFormatado">(15) 99175-4611</a></p></div></li>
             <li><span class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-instagram"/></svg></span><div><strong>Instagram</strong><p><a data-href="instagram" data-bind="instagramArroba" target="_blank" rel="noopener">@jmsolucoesdigitais.oficial</a></p></div></li>
+            <li><span class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-package"/></svg></span><div><strong>Ponto de Retirada Mercado Livre</strong><p>Retire aqui as suas compras do Mercado Livre, no horário de atendimento.</p></div></li>
             <li><span class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-clock"/></svg></span><div><strong>Horário de atendimento</strong><div class="status" data-status style="margin:4px 0 8px"><span class="status-dot"></span><span class="status-text">Verificando horário…</span></div><ul class="hours" data-render="hours"></ul><p class="holiday-note" data-render="holiday-note" hidden></p></div></li>
           </ul>
           <div class="btn-row" style="margin:16px 0">
