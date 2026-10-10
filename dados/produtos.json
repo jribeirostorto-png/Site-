@@ -1,0 +1,580 @@
+{
+  "produtos": [
+    {
+      "nome": "Caneca de porcelana personalizada",
+      "id": "caneca-porcelana",
+      "catalogo": [
+        "gerais"
+      ],
+      "categoria": "canecas",
+      "descricao": "Caneca branca de 325 ml com foto, nome ou frase em sublimação. Presente certo para qualquer ocasião.",
+      "imagem": "",
+      "destaque": true,
+      "pedidoMinimo": null,
+      "prazo": "3 a 5 dias úteis"
+    },
+    {
+      "nome": "Caneca mágica",
+      "id": "caneca-magica",
+      "catalogo": [
+        "gerais"
+      ],
+      "categoria": "canecas",
+      "descricao": "A estampa aparece quando a bebida quente é servida. Surpresa garantida.",
+      "imagem": "",
+      "destaque": false,
+      "pedidoMinimo": null,
+      "prazo": "3 a 5 dias úteis"
+    },
+    {
+      "nome": "Garrafa térmica inox personalizada",
+      "id": "garrafa-termica-inox",
+      "catalogo": [
+        "gerais"
+      ],
+      "categoria": "garrafas",
+      "descricao": "Garrafa de aço inox de 500 ml que mantém a temperatura, com nome ou logo.",
+      "imagem": "",
+      "destaque": true,
+      "pedidoMinimo": null,
+      "prazo": "5 a 7 dias úteis"
+    },
+    {
+      "nome": "Squeeze de alumínio",
+      "id": "squeeze-aluminio",
+      "catalogo": [
+        "gerais"
+      ],
+      "categoria": "garrafas",
+      "descricao": "Squeeze leve de 500 ml, ideal para academia, escola e eventos esportivos.",
+      "imagem": "",
+      "destaque": false,
+      "pedidoMinimo": null,
+      "prazo": "5 a 7 dias úteis"
+    },
+    {
+      "nome": "Almofada personalizada",
+      "id": "almofada-personalizada",
+      "catalogo": [
+        "gerais"
+      ],
+      "categoria": "decoracao",
+      "descricao": "Almofada com foto ou frase, com enchimento. Ótima para presentes e datas especiais.",
+      "imagem": "",
+      "destaque": false,
+      "pedidoMinimo": null,
+      "prazo": "3 a 5 dias úteis"
+    },
+    {
+      "nome": "Tapete automotivo personalizado",
+      "id": "tapete-automotivo",
+      "catalogo": [
+        "gerais",
+        "brindes"
+      ],
+      "categoria": "automotivo",
+      "descricao": "Tapete para carro com logo da sua empresa, lava-rápido ou concessionária. Divulgação que o cliente leva para casa.",
+      "imagem": "",
+      "destaque": true,
+      "pedidoMinimo": 10,
+      "prazo": "7 a 10 dias úteis"
+    },
+    {
+      "nome": "Saquinho de lixo para lava-rápido",
+      "id": "saquinho-lixo-carro",
+      "catalogo": [
+        "gerais"
+      ],
+      "categoria": "automotivo",
+      "descricao": "Saquinho de lixo automotivo personalizado com a marca do seu lava-rápido, oficina ou auto center.",
+      "imagem": "",
+      "destaque": true,
+      "pedidoMinimo": 100,
+      "prazo": "7 a 10 dias úteis"
+    },
+    {
+      "nome": "Quebra-cabeça com foto",
+      "id": "quebra-cabeca-foto",
+      "catalogo": [
+        "gerais",
+        "escolar"
+      ],
+      "categoria": "decoracao",
+      "descricao": "Quebra-cabeça personalizado com a sua foto. Diversão e lembrança ao mesmo tempo.",
+      "imagem": "",
+      "destaque": false,
+      "pedidoMinimo": null,
+      "prazo": "3 a 5 dias úteis"
+    },
+    {
+      "nome": "Azulejo decorativo com foto",
+      "id": "azulejo-foto",
+      "catalogo": [
+        "gerais"
+      ],
+      "categoria": "decoracao",
+      "descricao": "Azulejo 15x15 cm personalizado, com suporte. Para decorar e presentear.",
+      "imagem": "",
+      "destaque": false,
+      "pedidoMinimo": null,
+      "prazo": "3 a 5 dias úteis"
+    },
+    {
+      "nome": "Chaveiro personalizado",
+      "id": "chaveiro-personalizado",
+      "catalogo": [
+        "gerais"
+      ],
+      "categoria": "kits",
+      "descricao": "Chaveiro com foto, nome ou logo. Lembrancinha barata e muito útil.",
+      "imagem": "",
+      "destaque": false,
+      "pedidoMinimo": 10,
+      "prazo": "5 a 7 dias úteis"
+    },
+    {
+      "nome": "Kit boas-vindas corporativo",
+      "id": "kit-boas-vindas",
+      "catalogo": [
+        "brindes"
+      ],
+      "categoria": "kits",
+      "descricao": "Caneca, caderno e caneta com a sua marca, em embalagem caprichada. Ideal para receber colaboradores e clientes.",
+      "imagem": "",
+      "destaque": true,
+      "pedidoMinimo": 10,
+      "prazo": "7 a 10 dias úteis"
+    },
+    {
+      "nome": "Agenda corporativa personalizada",
+      "id": "agenda-corporativa",
+      "catalogo": [
+        "brindes",
+        "publico"
+      ],
+      "categoria": "agendas",
+      "descricao": "Agenda com capa personalizada e páginas internas com a sua identidade. Brinde de fim de ano que é usado o ano inteiro.",
+      "imagem": "",
+      "destaque": true,
+      "pedidoMinimo": 10,
+      "prazo": "10 a 15 dias úteis"
+    },
+    {
+      "nome": "Ecobag de algodão com logo",
+      "id": "ecobag-algodao",
+      "catalogo": [
+        "brindes"
+      ],
+      "categoria": "sacolas",
+      "descricao": "Sacola reutilizável de algodão cru, resistente e sustentável. Sua marca circulando pela cidade.",
+      "imagem": "",
+      "destaque": true,
+      "pedidoMinimo": 20,
+      "prazo": "7 a 10 dias úteis"
+    },
+    {
+      "nome": "Sacola TNT personalizada",
+      "id": "sacola-tnt",
+      "catalogo": [
+        "brindes"
+      ],
+      "categoria": "sacolas",
+      "descricao": "Sacola econômica para lojas, feiras, eventos e campanhas.",
+      "imagem": "",
+      "destaque": false,
+      "pedidoMinimo": 100,
+      "prazo": "7 a 10 dias úteis"
+    },
+    {
+      "nome": "Caneta personalizada com logo",
+      "id": "caneta-personalizada",
+      "catalogo": [
+        "brindes"
+      ],
+      "categoria": "escritorio",
+      "descricao": "Caneta esferográfica com a sua marca. O brinde mais versátil para balcão, eventos e atendimento.",
+      "imagem": "",
+      "destaque": false,
+      "pedidoMinimo": 100,
+      "prazo": "7 a 10 dias úteis"
+    },
+    {
+      "nome": "Caderno corporativo",
+      "id": "caderno-corporativo",
+      "catalogo": [
+        "brindes"
+      ],
+      "categoria": "papelaria",
+      "descricao": "Caderno com capa personalizada para reuniões, treinamentos e kits de boas-vindas.",
+      "imagem": "",
+      "destaque": false,
+      "pedidoMinimo": 10,
+      "prazo": "7 a 10 dias úteis"
+    },
+    {
+      "nome": "Bloco de anotações com logo",
+      "id": "bloco-anotacoes",
+      "catalogo": [
+        "brindes"
+      ],
+      "categoria": "papelaria",
+      "descricao": "Bloco de folhas destacáveis com a sua marca. Útil na mesa do cliente todos os dias.",
+      "imagem": "",
+      "destaque": false,
+      "pedidoMinimo": 20,
+      "prazo": "5 a 7 dias úteis"
+    },
+    {
+      "nome": "Copo térmico personalizado",
+      "id": "copo-termico",
+      "catalogo": [
+        "brindes"
+      ],
+      "categoria": "canecas",
+      "descricao": "Copo térmico com tampa, perfeito para café no trabalho. Com o logo da sua empresa.",
+      "imagem": "",
+      "destaque": false,
+      "pedidoMinimo": 10,
+      "prazo": "7 a 10 dias úteis"
+    },
+    {
+      "nome": "Mouse pad personalizado",
+      "id": "mouse-pad",
+      "catalogo": [
+        "brindes"
+      ],
+      "categoria": "escritorio",
+      "descricao": "Mouse pad com a sua arte, presente na mesa de trabalho do seu cliente.",
+      "imagem": "",
+      "destaque": false,
+      "pedidoMinimo": 10,
+      "prazo": "5 a 7 dias úteis"
+    },
+    {
+      "nome": "Banner em lona",
+      "id": "banner-lona",
+      "catalogo": [
+        "publico"
+      ],
+      "categoria": "banners",
+      "descricao": "Banner em lona com acabamento em bastão e cordão, no tamanho que você precisar.",
+      "imagem": "",
+      "destaque": true,
+      "pedidoMinimo": null,
+      "prazo": "2 a 4 dias úteis"
+    },
+    {
+      "nome": "Faixa em lona para eventos",
+      "id": "faixa-lona",
+      "catalogo": [
+        "publico"
+      ],
+      "categoria": "banners",
+      "descricao": "Faixas para eventos, campanhas, inaugurações e sinalização temporária.",
+      "imagem": "",
+      "destaque": false,
+      "pedidoMinimo": null,
+      "prazo": "2 a 4 dias úteis"
+    },
+    {
+      "nome": "Crachá em PVC com cordão",
+      "id": "cracha-pvc",
+      "catalogo": [
+        "publico"
+      ],
+      "categoria": "crachas",
+      "descricao": "Crachá de identificação com foto e dados, com cordão personalizado opcional.",
+      "imagem": "",
+      "destaque": true,
+      "pedidoMinimo": null,
+      "prazo": "3 a 5 dias úteis"
+    },
+    {
+      "nome": "Adesivos em vinil",
+      "id": "adesivo-vinil",
+      "catalogo": [
+        "publico"
+      ],
+      "categoria": "adesivos",
+      "descricao": "Adesivos recortados ou impressos para veículos, vitrines, produtos e sinalização.",
+      "imagem": "",
+      "destaque": false,
+      "pedidoMinimo": null,
+      "prazo": "2 a 4 dias úteis"
+    },
+    {
+      "nome": "Panfletos e folders para campanhas",
+      "id": "panfletos-folders",
+      "catalogo": [
+        "publico"
+      ],
+      "categoria": "impressos",
+      "descricao": "Material impresso para campanhas de saúde, educação, eventos e divulgação.",
+      "imagem": "",
+      "destaque": false,
+      "pedidoMinimo": 500,
+      "prazo": "3 a 5 dias úteis"
+    },
+    {
+      "nome": "Cartilhas e apostilas",
+      "id": "cartilhas-apostilas",
+      "catalogo": [
+        "publico"
+      ],
+      "categoria": "impressos",
+      "descricao": "Impressão e encadernação de cartilhas, apostilas e materiais de capacitação.",
+      "imagem": "",
+      "destaque": false,
+      "pedidoMinimo": 20,
+      "prazo": "5 a 7 dias úteis"
+    },
+    {
+      "nome": "Placas de sinalização em PVC",
+      "id": "placa-pvc",
+      "catalogo": [
+        "publico"
+      ],
+      "categoria": "impressos",
+      "descricao": "Placas para portas, setores, avisos e identificação de ambientes.",
+      "imagem": "",
+      "destaque": false,
+      "pedidoMinimo": null,
+      "prazo": "3 a 5 dias úteis"
+    },
+    {
+      "nome": "Certificados impressos",
+      "id": "certificados",
+      "catalogo": [
+        "publico"
+      ],
+      "categoria": "impressos",
+      "descricao": "Certificados de cursos, eventos e homenagens em papel especial.",
+      "imagem": "",
+      "destaque": false,
+      "pedidoMinimo": null,
+      "prazo": "2 a 3 dias úteis"
+    },
+    {
+      "nome": "Camisetas para campanhas e eventos",
+      "id": "camiseta-campanha",
+      "catalogo": [
+        "publico",
+        "uniformes"
+      ],
+      "categoria": "vestuario",
+      "descricao": "Camisetas personalizadas para campanhas, mutirões, eventos esportivos e equipes.",
+      "imagem": "",
+      "destaque": true,
+      "pedidoMinimo": 20,
+      "prazo": "7 a 10 dias úteis"
+    },
+    {
+      "nome": "Livro de colorir personalizado",
+      "id": "livro-colorir",
+      "catalogo": [
+        "escolar"
+      ],
+      "categoria": "infantil",
+      "descricao": "Livrinho de colorir com o nome e o tema da criança. Sucesso em festas e na escola.",
+      "imagem": "",
+      "destaque": true,
+      "pedidoMinimo": 10,
+      "prazo": "5 a 7 dias úteis"
+    },
+    {
+      "nome": "Kit colorir para festas",
+      "id": "kit-colorir",
+      "catalogo": [
+        "escolar"
+      ],
+      "categoria": "infantil",
+      "descricao": "Livro de colorir com giz de cera em saquinho personalizado. Lembrancinha prática e divertida.",
+      "imagem": "",
+      "destaque": true,
+      "pedidoMinimo": 10,
+      "prazo": "5 a 7 dias úteis"
+    },
+    {
+      "nome": "Lembrancinhas personalizadas",
+      "id": "lembrancinhas-festa",
+      "catalogo": [
+        "escolar"
+      ],
+      "categoria": "kits",
+      "descricao": "Lembrancinhas para aniversários, batizados, formaturas e datas comemorativas da escola.",
+      "imagem": "",
+      "destaque": false,
+      "pedidoMinimo": 10,
+      "prazo": "5 a 10 dias úteis"
+    },
+    {
+      "nome": "Caderno escolar com nome",
+      "id": "caderno-escolar",
+      "catalogo": [
+        "escolar"
+      ],
+      "categoria": "papelaria",
+      "descricao": "Caderno com capa personalizada com o nome e o tema favorito da criança.",
+      "imagem": "",
+      "destaque": false,
+      "pedidoMinimo": null,
+      "prazo": "5 a 7 dias úteis"
+    },
+    {
+      "nome": "Etiquetas escolares com nome",
+      "id": "etiquetas-escolares",
+      "catalogo": [
+        "escolar"
+      ],
+      "categoria": "adesivos",
+      "descricao": "Kit de etiquetas para identificar cadernos, lápis, potes e garrafinhas.",
+      "imagem": "",
+      "destaque": false,
+      "pedidoMinimo": null,
+      "prazo": "3 a 5 dias úteis"
+    },
+    {
+      "nome": "Caneca para professores",
+      "id": "caneca-professor",
+      "catalogo": [
+        "escolar"
+      ],
+      "categoria": "canecas",
+      "descricao": "Homenagem para o Dia dos Professores, fim de ano letivo ou formatura.",
+      "imagem": "",
+      "destaque": false,
+      "pedidoMinimo": null,
+      "prazo": "3 a 5 dias úteis"
+    },
+    {
+      "nome": "Planner do professor",
+      "id": "planner-professor",
+      "catalogo": [
+        "escolar"
+      ],
+      "categoria": "agendas",
+      "descricao": "Planner com calendário, planejamento de aulas e capa com o nome do professor.",
+      "imagem": "",
+      "destaque": true,
+      "pedidoMinimo": null,
+      "prazo": "7 a 10 dias úteis"
+    },
+    {
+      "nome": "Tag de mochila personalizada",
+      "id": "tag-mochila",
+      "catalogo": [
+        "escolar"
+      ],
+      "categoria": "crachas",
+      "descricao": "Identificação para mochila e lancheira com nome e telefone dos responsáveis.",
+      "imagem": "",
+      "destaque": false,
+      "pedidoMinimo": null,
+      "prazo": "3 a 5 dias úteis"
+    },
+    {
+      "nome": "Materiais escolares e de papelaria",
+      "id": "material-papelaria",
+      "catalogo": [
+        "escolar"
+      ],
+      "categoria": "papelaria",
+      "descricao": "Impressão de atividades, apostilas, encadernação e plastificação para alunos e professores.",
+      "imagem": "",
+      "destaque": false,
+      "pedidoMinimo": null,
+      "prazo": "No mesmo dia ou sob consulta"
+    },
+    {
+      "nome": "Camiseta de algodão personalizada",
+      "id": "camiseta-algodao",
+      "catalogo": [
+        "uniformes"
+      ],
+      "categoria": "vestuario",
+      "descricao": "Camiseta confortável com estampa em silk ou DTF. Para equipes, empresas e eventos.",
+      "imagem": "",
+      "destaque": true,
+      "pedidoMinimo": 5,
+      "prazo": "7 a 10 dias úteis"
+    },
+    {
+      "nome": "Camiseta dry fit sublimada",
+      "id": "camiseta-dry-fit",
+      "catalogo": [
+        "uniformes"
+      ],
+      "categoria": "vestuario",
+      "descricao": "Tecido leve que seca rápido, com estampa total em sublimação. Ótima para esportes e trabalho externo.",
+      "imagem": "",
+      "destaque": false,
+      "pedidoMinimo": 5,
+      "prazo": "7 a 10 dias úteis"
+    },
+    {
+      "nome": "Camisa polo com logo",
+      "id": "camisa-polo",
+      "catalogo": [
+        "uniformes"
+      ],
+      "categoria": "vestuario",
+      "descricao": "Polo com a sua logomarca, para um atendimento com visual profissional.",
+      "imagem": "",
+      "destaque": true,
+      "pedidoMinimo": 5,
+      "prazo": "7 a 10 dias úteis"
+    },
+    {
+      "nome": "Camisa social com logo",
+      "id": "camisa-social",
+      "catalogo": [
+        "uniformes"
+      ],
+      "categoria": "vestuario",
+      "descricao": "Camisa social com aplicação da marca em DTF. Elegância para a sua equipe.",
+      "imagem": "",
+      "destaque": false,
+      "pedidoMinimo": 5,
+      "prazo": "10 a 15 dias úteis"
+    },
+    {
+      "nome": "Avental personalizado",
+      "id": "avental-personalizado",
+      "catalogo": [
+        "uniformes"
+      ],
+      "categoria": "vestuario",
+      "descricao": "Avental para cozinhas, salões, lojas e eventos, com a sua marca.",
+      "imagem": "",
+      "destaque": false,
+      "pedidoMinimo": 3,
+      "prazo": "7 a 10 dias úteis"
+    },
+    {
+      "nome": "Touca personalizada",
+      "id": "touca-personalizada",
+      "catalogo": [
+        "uniformes"
+      ],
+      "categoria": "bones",
+      "descricao": "Touca para cozinha e produção de alimentos, com identificação da empresa.",
+      "imagem": "",
+      "destaque": false,
+      "pedidoMinimo": 5,
+      "prazo": "7 a 10 dias úteis"
+    },
+    {
+      "nome": "Boné personalizado",
+      "id": "bone-personalizado",
+      "catalogo": [
+        "uniformes"
+      ],
+      "categoria": "bones",
+      "descricao": "Boné com a sua marca em sublimação ou DTF. Completa o uniforme e vira brinde.",
+      "imagem": "",
+      "destaque": true,
+      "pedidoMinimo": 10,
+      "prazo": "7 a 10 dias úteis"
+    }
+  ]
+}

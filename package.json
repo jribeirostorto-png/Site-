@@ -1,0 +1,15 @@
+{
+  "name": "jm-solucoes-site",
+  "private": true,
+  "type": "module",
+  "description": "Site da JM Soluções (Iperó/SP) com painel de edição via Pages CMS.",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "devDependencies": {
+    "sharp": "0.33.5"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
