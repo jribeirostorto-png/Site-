@@ -1,0 +1,219 @@
+# Configuração do painel de edição (Pages CMS — https://app.pagescms.org)
+# Define o que a Joice pode editar pelo painel. Cada alteração salva vira um commit
+# na branch main e o site é publicado automaticamente (.github/workflows/publicar-site.yml).
+
+media:
+  input: fotos
+  output: /fotos
+  categories: [image]
+  rename: safe
+
+content:
+  # ------------------------------------------------------------------ PRODUTOS
+  - name: produtos
+    label: Produtos do catálogo
+    description: Adicione, edite ou exclua produtos. Sem preço — o site mostra "Preço sob consulta".
+    type: file
+    path: dados/produtos.json
+    format: json
+    fields:
+      - name: produtos
+        label: Produtos
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.nome}"
+        fields:
+          - name: nome
+            label: Nome do produto
+            type: string
+            required: true
+          - name: catalogo
+            label: Catálogo(s) onde aparece
+            description: Pode marcar mais de um.
+            type: select
+            required: true
+            options:
+              multiple: true
+              values:
+                - { value: gerais, label: Produtos Gerais }
+                - { value: brindes, label: Brindes Corporativos }
+                - { value: publico, label: Prefeituras e Órgãos Públicos }
+                - { value: escolar, label: Crianças e Professores }
+                - { value: uniformes, label: Uniformes }
+          - name: categoria
+            label: Categoria (define o desenho quando não há foto)
+            type: select
+            options:
+              values:
+                - { value: canecas, label: Canecas e copos }
+                - { value: garrafas, label: Garrafas }
+                - { value: sacolas, label: Sacolas }
+                - { value: papelaria, label: Papelaria }
+                - { value: agendas, label: Agendas }
+                - { value: impressos, label: Impressos }
+                - { value: banners, label: Banners e faixas }
+                - { value: automotivo, label: Automotivo }
+                - { value: infantil, label: Infantil }
+                - { value: crachas, label: Identificação }
+                - { value: adesivos, label: Adesivos e etiquetas }
+                - { value: vestuario, label: Vestuário }
+                - { value: bones, label: Bonés e toucas }
+                - { value: kits, label: Kits }
+                - { value: decoracao, label: Decoração e presentes }
+                - { value: escritorio, label: Escritório }
+          - name: descricao
+            label: Descrição curta
+            type: text
+          - name: imagem
+            label: Foto
+            description: Opcional. Fotos grandes são reduzidas automaticamente na publicação.
+            type: image
+          - name: destaque
+            label: Mostrar como destaque
+            type: boolean
+            default: false
+          - name: pedidoMinimo
+            label: Pedido mínimo (unidades)
+            description: Deixe vazio se não houver.
+            type: number
+            options:
+              min: 1
+              max: 9999
+          - name: prazo
+            label: Prazo de produção
+            description: "Ex.: 5 a 7 dias úteis"
+            type: string
+          - name: id
+            label: Link do produto
+            type: string
+            hidden: true
+
+  # ------------------------------------------------------- INFORMAÇÕES DO SITE
+  - name: conteudo
+    label: Informações do site
+    description: Aviso do topo, contatos, horários, feriados, pagamento, galeria, depoimentos e dúvidas.
+    type: file
+    path: dados/conteudo.json
+    format: json
+    fields:
+      - name: aviso
+        label: Aviso do topo
+        type: object
+        fields:
+          - name: texto
+            label: Texto do aviso (deixe vazio para esconder)
+            type: string
+          - name: link
+            label: Link do aviso (opcional)
+            description: "Ex.: #/brindes ou #/catalogo"
+            type: string
+          - name: textoLink
+            label: Texto do link
+            type: string
+
+      - name: empresa
+        label: Contatos e endereço
+        type: object
+        fields:
+          - name: whatsapp
+            label: WhatsApp (só números, com 55 e DDD)
+            description: "Ex.: 5515991754611"
+            type: string
+            required: true
+            pattern:
+              regex: "^55[0-9]{10,11}$"
+              message: Use só números, começando com 55 e o DDD.
+          - name: whatsappFormatado
+            label: WhatsApp como aparece no site
+            description: "Ex.: (15) 99175-4611"
+            type: string
+          - name: instagram
+            label: Instagram (sem @)
+            type: string
+          - name: cnpj
+            label: CNPJ
+            type: string
+          - name: endereco
+            label: Endereço
+            type: object
+            fields:
+              - { name: rua, label: Rua e número, type: string }
+              - { name: bairro, label: Bairro (opcional), type: string }
+              - { name: cidade, label: Cidade, type: string }
+              - { name: uf, label: Estado (UF), type: string }
+              - { name: cep, label: CEP (opcional), type: string }
+
+      - name: horarios
+        label: Horário de atendimento (horário de Brasília)
+        type: object
+        fields:
+          - name: segunda
+            label: Segunda-feira
+            type: object
+            fields: &dia
+              - { name: fechado, label: Fechado neste dia, type: boolean, default: false }
+              - { name: abre, label: Abre às (HH:MM), type: string, pattern: { regex: "^([01][0-9]|2[0-3]):[0-5][0-9]$|^$", message: "Use o formato 08:00" } }
+              - { name: fecha, label: Fecha às (HH:MM), type: string, pattern: { regex: "^([01][0-9]|2[0-4]):[0-5][0-9]$|^$", message: "Use o formato 18:00" } }
+          - { name: terca, label: Terça-feira, type: object, fields: *dia }
+          - { name: quarta, label: Quarta-feira, type: object, fields: *dia }
+          - { name: quinta, label: Quinta-feira, type: object, fields: *dia }
+          - { name: sexta, label: Sexta-feira, type: object, fields: *dia }
+          - { name: sabado, label: Sábado, type: object, fields: *dia }
+          - { name: domingo, label: Domingo, type: object, fields: *dia }
+
+      - name: feriados
+        label: Feriados e dias fechados
+        description: Nesses dias o site mostra "Fechado agora".
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.data} — {fields.nome}"
+        fields:
+          - { name: data, label: Data, type: date, required: true }
+          - { name: nome, label: Motivo, type: string }
+
+      - name: pagamentos
+        label: Formas de pagamento
+        type: string
+        list: true
+
+      - name: galeria
+        label: Galeria de trabalhos (vazia = seção escondida)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.legenda}"
+        fields:
+          - { name: imagem, label: Foto, type: image, required: true }
+          - { name: legenda, label: Legenda, type: string }
+          - { name: alt, label: Descrição da foto (para acessibilidade), type: string }
+
+      - name: depoimentos
+        label: Depoimentos de clientes (vazio = seção escondida)
+        description: Use só depoimentos reais, com autorização do cliente.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.nome}"
+        fields:
+          - { name: nome, label: Nome do cliente, type: string, required: true }
+          - { name: detalhe, label: "Detalhe (ex.: Cliente de Iperó)", type: string }
+          - { name: texto, label: Depoimento, type: text, required: true }
+          - { name: nota, label: Nota (1 a 5 estrelas), type: number, options: { min: 1, max: 5 } }
+
+      - name: faq
+        label: Dúvidas frequentes
+        description: "Na resposta, {horario} e {pagamentos} são trocados automaticamente."
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.pergunta}"
+        fields:
+          - { name: pergunta, label: Pergunta, type: string, required: true }
+          - { name: resposta, label: Resposta, type: text, required: true }

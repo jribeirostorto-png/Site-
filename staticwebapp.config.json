@@ -1,0 +1,15 @@
+{
+  "routes": [
+    { "route": "/admin", "redirect": "https://app.pagescms.org/", "statusCode": 302 },
+    { "route": "/painel", "redirect": "https://app.pagescms.org/", "statusCode": 302 },
+    { "route": "/fotos/*", "headers": { "Cache-Control": "public, max-age=86400" } }
+  ],
+  "responseOverrides": {
+    "404": { "redirect": "/", "statusCode": 302 }
+  },
+  "globalHeaders": {
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
+  }
+}

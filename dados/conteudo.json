@@ -1,0 +1,162 @@
+{
+  "aviso": {
+    "texto": "🎁 Brindes de fim de ano para empresas: peça seu orçamento com antecedência e garanta a entrega!",
+    "link": "#/brindes",
+    "textoLink": "Ver brindes"
+  },
+  "empresa": {
+    "whatsapp": "5515991754611",
+    "whatsappFormatado": "(15) 99175-4611",
+    "instagram": "jmsolucoesdigitais.oficial",
+    "cnpj": "67.212.025/0001-20",
+    "endereco": {
+      "rua": "Rua Faria Lima, 279",
+      "bairro": "",
+      "cidade": "Iperó",
+      "uf": "SP",
+      "cep": ""
+    }
+  },
+  "horarios": {
+    "segunda": {
+      "fechado": false,
+      "abre": "08:00",
+      "fecha": "18:00"
+    },
+    "terca": {
+      "fechado": false,
+      "abre": "08:00",
+      "fecha": "18:00"
+    },
+    "quarta": {
+      "fechado": false,
+      "abre": "08:00",
+      "fecha": "18:00"
+    },
+    "quinta": {
+      "fechado": false,
+      "abre": "08:00",
+      "fecha": "18:00"
+    },
+    "sexta": {
+      "fechado": false,
+      "abre": "08:00",
+      "fecha": "18:00"
+    },
+    "sabado": {
+      "fechado": false,
+      "abre": "08:00",
+      "fecha": "14:00"
+    },
+    "domingo": {
+      "fechado": true,
+      "abre": "",
+      "fecha": ""
+    }
+  },
+  "feriados": [
+    {
+      "data": "2026-10-12",
+      "nome": "Nossa Senhora Aparecida"
+    },
+    {
+      "data": "2026-11-02",
+      "nome": "Finados"
+    },
+    {
+      "data": "2026-11-15",
+      "nome": "Proclamação da República"
+    },
+    {
+      "data": "2026-11-20",
+      "nome": "Dia da Consciência Negra"
+    },
+    {
+      "data": "2026-12-25",
+      "nome": "Natal"
+    },
+    {
+      "data": "2027-01-01",
+      "nome": "Confraternização Universal"
+    },
+    {
+      "data": "2027-03-26",
+      "nome": "Sexta-feira Santa"
+    },
+    {
+      "data": "2027-04-21",
+      "nome": "Tiradentes"
+    },
+    {
+      "data": "2027-05-01",
+      "nome": "Dia do Trabalho"
+    },
+    {
+      "data": "2027-05-27",
+      "nome": "Corpus Christi"
+    },
+    {
+      "data": "2027-09-07",
+      "nome": "Independência do Brasil"
+    },
+    {
+      "data": "2027-10-12",
+      "nome": "Nossa Senhora Aparecida"
+    },
+    {
+      "data": "2027-11-02",
+      "nome": "Finados"
+    },
+    {
+      "data": "2027-11-15",
+      "nome": "Proclamação da República"
+    },
+    {
+      "data": "2027-11-20",
+      "nome": "Dia da Consciência Negra"
+    },
+    {
+      "data": "2027-12-25",
+      "nome": "Natal"
+    }
+  ],
+  "pagamentos": [
+    "Pix"
+  ],
+  "galeria": [],
+  "depoimentos": [],
+  "faq": [
+    {
+      "pergunta": "Como retiro minha compra do Mercado Livre?",
+      "resposta": "Quando o aplicativo do Mercado Livre avisar que o seu pedido chegou ao nosso ponto, venha no horário de atendimento: {horario}.\nTraga um documento oficial com foto e o código de retirada (QR code) que aparece no app.\nSe outra pessoa for retirar por você, confira no próprio app como autorizar a retirada."
+    },
+    {
+      "pergunta": "Como peço um orçamento?",
+      "resposta": "É simples: no Catálogo, escolha os produtos, defina as quantidades e toque em \"Adicionar ao orçamento\". Depois abra o orçamento (ícone do carrinho), informe seu nome e toque em \"Enviar orçamento pelo WhatsApp\".\nSe preferir, chame direto no WhatsApp e conte a sua ideia."
+    },
+    {
+      "pergunta": "Qual é o prazo de produção?",
+      "resposta": "Depende do produto, da quantidade e da técnica. O prazo exato é informado no orçamento e começa a contar depois da aprovação da arte.\nOs prazos que aparecem no catálogo são estimativas. Para datas especiais, como fim de ano e eventos, peça com antecedência."
+    },
+    {
+      "pergunta": "Existe pedido mínimo?",
+      "resposta": "Muitos produtos podem ser feitos a partir de 1 unidade. Alguns itens, como canetas, sacolas e panfletos, têm quantidade mínima, que aparece no card de cada produto."
+    },
+    {
+      "pergunta": "Quais são as formas de pagamento?",
+      "resposta": "Aceitamos: {pagamentos}.\nPara empresas e órgãos públicos, as condições são combinadas no orçamento."
+    },
+    {
+      "pergunta": "Vocês atendem empresas e prefeituras?",
+      "resposta": "Sim! Atendemos órgãos públicos e empresas com orçamento formal em nome do CNPJ. Veja o catálogo \"Prefeituras e Órgãos Públicos\" ou fale com a gente pelo WhatsApp."
+    },
+    {
+      "pergunta": "Como envio a minha arte?",
+      "resposta": "Envie pelo WhatsApp, de preferência em PDF, PNG em alta resolução, CDR ou AI. Se você não tiver arte, a gente cria para você.\nAntes de produzir, enviamos uma prévia para a sua aprovação."
+    },
+    {
+      "pergunta": "Quais documentos devo levar para cada serviço?",
+      "resposta": "• Abertura de MEI: RG e CPF, comprovante de endereço, título de eleitor ou número do recibo do Imposto de Renda e acesso à conta gov.br.\n• Requerimentos no INSS: RG, CPF, comprovante de endereço, carteira de trabalho e acesso à conta gov.br.\n• Segunda via de documentos: documento com foto e os dados do documento que precisa.\n• Currículo: dados pessoais, experiências, cursos e uma foto (opcional).\n• Assessoria jurídica e documental: chame no WhatsApp que informamos a lista certa para o seu caso."
+    }
+  ]
+}

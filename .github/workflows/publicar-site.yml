@@ -1,0 +1,55 @@
+# Publica o site no Azure Static Web Apps a cada alteração na branch main
+# (inclusive as feitas pelo painel Pages CMS).
+#
+# Requisito único: o segredo AZURE_STATIC_WEB_APPS_API_TOKEN no repositório
+# (Settings → Secrets and variables → Actions). Veja README.md.
+# Sem o segredo, o fluxo só valida os dados e monta o site (não publica).
+name: Publicar site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publicar-site-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    env:
+      TEM_TOKEN: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN != '' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Validar dados e montar o site
+        run: npm run build
+
+      - name: Publicar no Azure Static Web Apps
+        if: github.event_name != 'pull_request' && env.TEM_TOKEN == 'true'
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          action: upload
+          app_location: dist
+          output_location: ""
+          skip_app_build: true
+          skip_api_build: true
+
+      - name: Aviso (segredo ausente)
+        if: github.event_name != 'pull_request' && env.TEM_TOKEN != 'true'
+        run: echo "::warning::Segredo AZURE_STATIC_WEB_APPS_API_TOKEN não configurado; o site foi montado mas não publicado. Veja README.md."

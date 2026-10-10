@@ -1549,6 +1549,12 @@ body.scroll-locked { position: fixed; left: 0; right: 0; overflow: hidden; }
 /* ============================================================================
    CONFIG — TUDO O QUE VOCÊ PODE MUDAR SEM MEXER NO RESTO DO CÓDIGO
    ----------------------------------------------------------------------------
+   IMPORTANTE: no site publicado, produtos, fotos, aviso, horários, feriados,
+   pagamentos, contatos, galeria, depoimentos e dúvidas vêm do PAINEL
+   (Pages CMS → pasta "dados/"). Os valores abaixo são a RESERVA, usados ao
+   abrir o arquivo direto no computador ou se os dados do painel faltarem.
+   Veja COMO-EDITAR.md.
+
    Dicas:
    • Textos ficam entre aspas simples: 'assim'. Se o texto tiver apóstrofo,
      use \' (ex.: 'Copo d\'água').
@@ -1818,6 +1824,12 @@ const CONFIG = {
 };
 
 /* ============================================================================
+   DADOS DO PAINEL — preenchido automaticamente na publicação (scripts/build.mjs)
+   com o conteúdo de dados/produtos.json e dados/conteudo.json. Não edite esta linha.
+   ============================================================================ */
+const DADOS_PAINEL = null;
+
+/* ============================================================================
    A PARTIR DAQUI É A LÓGICA DO SITE. Não é preciso mexer para o dia a dia.
    ============================================================================ */
 document.addEventListener('DOMContentLoaded', function () {
@@ -1965,8 +1977,45 @@ document.addEventListener('DOMContentLoaded', function () {
   };
   var S = run('config', buildSiteData) || FALLBACK_DATA;
 
+  /* Junta os dados do painel (se houver) por cima do CONFIG de reserva */
+  function applyPainel(base) {
+    var P = (typeof DADOS_PAINEL === 'object' && DADOS_PAINEL) ? DADOS_PAINEL : null;
+    if (!P) return base;
+    var C = Object.assign({}, base);
+    var pr = P.produtos && Array.isArray(P.produtos.produtos) ? P.produtos.produtos : null;
+    if (pr) C.produtos = pr;
+    var ct = (P.conteudo && typeof P.conteudo === 'object') ? P.conteudo : {};
+    if (ct.aviso && typeof ct.aviso === 'object') C.aviso = ct.aviso;
+    var emp = (ct.empresa && typeof ct.empresa === 'object') ? ct.empresa : {};
+    ['whatsapp', 'whatsappFormatado', 'instagram', 'cnpj'].forEach(function (k) {
+      if (typeof emp[k] === 'string' && emp[k].trim()) C[k] = emp[k];
+    });
+    if (emp.endereco && typeof emp.endereco === 'object') C.endereco = Object.assign({}, base.endereco, emp.endereco);
+    if (ct.horarios && typeof ct.horarios === 'object') {
+      var hs = {};
+      ['domingo', 'segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado'].forEach(function (dia) {
+        var v = ct.horarios[dia];
+        if (Array.isArray(v)) hs[dia] = v;
+        else if (v && typeof v === 'object' && !v.fechado) hs[dia] = [v.abre, v.fecha];
+        else hs[dia] = null;
+      });
+      C.horarios = hs;
+    }
+    ['feriados', 'pagamentos', 'galeria', 'depoimentos', 'faq'].forEach(function (k) {
+      if (Array.isArray(ct[k])) C[k] = ct[k];
+    });
+    return C;
+  }
+  /* Caminho de foto: aceita "fotos/x.jpg", "/fotos/x.jpg" ou link https:// */
+  function imgPath(v) {
+    var s = (typeof v === 'string') ? v.trim() : '';
+    if (!s || /^(https?:|data:)/i.test(s)) return s;
+    return s.replace(/^\/+/, '');
+  }
+  function slugify(v) { return normalize(v).replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 60); }
+
   function buildSiteData() {
-    var C = (typeof CONFIG === 'object' && CONFIG) ? CONFIG : {};
+    var C = applyPainel((typeof CONFIG === 'object' && CONFIG) ? CONFIG : {});
     function warn(msg) { console.warn('[CONFIG] ' + msg); }
     function str(v, def) { return (typeof v === 'string' && v.trim()) ? v.trim() : def; }
     function arr(v, name) {
@@ -2013,7 +2062,7 @@ document.addEventListener('DOMContentLoaded', function () {
     /* Feriados */
     d.feriados = {};
     arr(C.feriados, 'feriados').forEach(function (f) {
-      var data = typeof f === 'string' ? f : (f && f.data);
+      var data = String((typeof f === 'string' ? f : (f && f.data)) || '').slice(0, 10);
       var nome = (f && typeof f === 'object' && f.nome) ? String(f.nome) : 'Feriado';
       if (!/^\d{4}-\d{2}-\d{2}$/.test(String(data || ''))) { warn('Feriado com data inválida ignorado: ' + JSON.stringify(f)); return; }
       d.feriados[data] = nome;
@@ -2043,11 +2092,18 @@ document.addEventListener('DOMContentLoaded', function () {
     d.produtoPorId = {};
     arr(C.produtos, 'produtos').forEach(function (p, i) {
       if (!p || typeof p !== 'object') { warn('Produto #' + (i + 1) + ' inválido ignorado.'); return; }
-      var id = str(p.id, '');
       var nome = str(p.nome, '');
-      if (!id || !/^[a-z0-9-]+$/.test(id)) { warn('Produto #' + (i + 1) + ' ignorado: "id" faltando ou com caracteres inválidos (use letras minúsculas, números e hífen).'); return; }
-      if (!nome) { warn('Produto "' + id + '" ignorado: falta o "nome".'); return; }
-      if (d.produtoPorId[id]) { warn('Produto "' + id + '" ignorado: id repetido.'); return; }
+      if (!nome) { warn('Produto #' + (i + 1) + ' ignorado: falta o "nome".'); return; }
+      /* id (vira o link do produto): se não for informado, é criado a partir do nome */
+      var idDado = str(p.id, '');
+      var id = slugify(idDado || nome);
+      if (!id) { warn('Produto #' + (i + 1) + ' ignorado: não foi possível criar o "id".'); return; }
+      if (d.produtoPorId[id]) {
+        if (idDado) { warn('Produto "' + id + '" ignorado: id repetido.'); return; }
+        var n = 2;
+        while (d.produtoPorId[id + '-' + n]) n++;
+        id = id + '-' + n;
+      }
       var cats = (Array.isArray(p.catalogo) ? p.catalogo : [p.catalogo]).filter(function (c) { return typeof c === 'string' && catIds[c]; });
       if (!cats.length) { warn('Produto "' + id + '" ignorado: "catalogo" faltando ou inexistente.'); return; }
       var min = parseInt(p.pedidoMinimo, 10);
@@ -2057,7 +2113,7 @@ document.addEventListener('DOMContentLoaded', function () {
         categoria: str(p.categoria, ''),
         catalogos: cats,
         descricao: str(p.descricao, ''),
-        imagem: str(p.imagem, ''),
+        imagem: imgPath(p.imagem),
         destaque: p.destaque === true,
         pedidoMinimo: (isFinite(min) && min > 1) ? Math.min(min, QTD_MAX) : null,
         prazo: str(p.prazo, ''),
@@ -2078,7 +2134,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var ok = g && str(g.imagem, '');
       if (!ok) warn('Foto #' + (i + 1) + ' da galeria ignorada: falta "imagem".');
       return ok;
-    });
+    }).map(function (g) { return Object.assign({}, g, { imagem: imgPath(g.imagem) }); });
     d.servicos = arr(C.servicos, 'servicos').filter(function (s, i) {
       var ok = s && str(s.nome, '');
       if (!ok) warn('Serviço #' + (i + 1) + ' ignorado: falta "nome".');
